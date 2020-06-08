@@ -1,4 +1,3 @@
-
 #Simple packing-algorithm
 
 Test task:
