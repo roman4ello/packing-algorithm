@@ -1,4 +1,4 @@
-#Simple packing-algorithm
+# Simple packing-algorithm
 
 Test task:
 
