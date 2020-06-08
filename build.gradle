@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'com.boyar'
+version '1.0-SNAPSHOT'
+
+mainClassName = 'com.boyar.packing.algorithm.AppMain'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    jar {
+        doFirst {
+            from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+        }
+        exclude 'META-INF/*.RSA', 'META-INF/*.SF', 'META-INF/*.DSA'
+        manifest { attributes 'Main-Class': mainClassName }
+    }
+}
